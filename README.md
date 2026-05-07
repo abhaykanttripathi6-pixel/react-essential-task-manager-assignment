@@ -24,19 +24,5 @@ A Task Manager application built using React, Context API and useReducer.
 - src/assets/screenshots
 
 
-## How to Run Locally
-
-1. Clone the repository
-```bash
-git clone https://github.com/abhaykanttripathi6/react-essentials-assignment.git
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Start the project
-```bash
-npm run dev
-```
+## Live Deployment Link
+[Click Here](https://taskmanagerapp-project.netlify.app/)
