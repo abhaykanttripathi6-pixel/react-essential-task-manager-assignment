@@ -26,7 +26,7 @@ const TaskItem = ({ id, title, description, date, status, priority }) => {
 
   return (
     <TaskItemWrapper>
-      <div className="taskTitle-Description">
+      <div className={`taskTitle-Description ${(status == 'Completed') ? 'done' : ''}`}>
         <h1>{title}</h1>
         <p>{description}</p>
       </div>
@@ -35,8 +35,19 @@ const TaskItem = ({ id, title, description, date, status, priority }) => {
         <span>Created: {date}</span>
       </div>
 
-      <div className='taskStatus-Edit'>
-        <span className='status' onClick={handleToggleStatus}>{status}</span>
+      <div className='taskStatus-wrapper'>
+        <div className='taskSatus'>
+          <span>Task Status:</span>
+          <span className='status'>{status}</span>
+        </div>
+
+        <div className="taskStatus-input">
+          <input id='checkbox' type="checkbox" onChange={handleToggleStatus}/>
+          <label htmlFor='checkbox'>Mark as completed</label>
+        </div>
+      </div>
+
+      <div className='edit'>
         <span onClick={handleEdit}>Edit</span>
         <span onClick={handleDelete}>Delete</span>
       </div>
@@ -64,6 +75,14 @@ const TaskItemWrapper = styled.div`
      word-wrap: break-word;
     }
 
+    .done{
+      text-decoration: line-through;
+    }
+
+    .done p {
+      opacity: 0.8;
+    }
+
     .taskTitle-Description h1{
        font-size: large;
        font-weight: 600;
@@ -83,7 +102,36 @@ const TaskItemWrapper = styled.div`
         font-weight: 600;
     }
 
-    .taskStatus-Edit span{
+    .taskStatus-wrapper{
+      padding:0.8rem 0;
+      font-size: medium;
+      font-weight: 500;
+      color: gray;
+    }
+ 
+    .status{
+      padding: 0.3rem 0.5rem ;
+      margin: 1rem 0.5rem;
+      background-color: #00a400;
+      border-radius: 0.7rem;
+      font-size: small;
+      font-weight: 600;
+      cursor: pointer;
+      color: white;
+    }
+
+    .taskStatus-input{
+     display: flex ;
+     align-items: center;
+     gap: 0.5rem;
+     margin-top: 1rem;
+    }
+
+   .taskStatus-input input{
+     height: 1rem;
+     width: 1rem;
+   }
+    .edit span{
         display: inline-block;
         padding: 0.5rem 1rem ;
         margin: 1rem 0.5rem;
@@ -92,11 +140,6 @@ const TaskItemWrapper = styled.div`
         font-size: medium;
         font-weight: 600;
         cursor: pointer;
-    }
-
-    .taskStatus-Edit .status{
-        background-color: #00a400;
-        color: white;
     }
 
     .priority span{
@@ -136,7 +179,7 @@ const TaskItemWrapper = styled.div`
     }
 
 
-    .taskStatus-Edit span{
+    .edit span{
         padding: 0.4rem 1rem ;
         margin: 1rem 0.4rem 0.5rem 0;
         font-size: small;

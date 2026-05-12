@@ -40,3 +40,20 @@ npm install
 ```bash
 npm run dev
 ```
+
+<!-- ## How to Run Locally
+
+1. Clone the repository
+```bash
+git clone https://github.com/abhaykanttripathi6/react-essentials-assignment.git
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the project
+```bash
+npm run dev
+``` -->

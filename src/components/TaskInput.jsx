@@ -25,7 +25,10 @@ const TaskInput = () => {
 
 
     const handleSubmit = () => {
-        if (title === "" || description === "") return;
+        if (title.trim() === "" || description.trim() === ""){
+            alert('Input fied can not be empty.')
+            return;
+        } 
 
         if (edit) {
             updateTask(edit.id, title, description, taskPriority);
@@ -137,10 +140,10 @@ const TaskInputWrapper = styled.div`
         text-align: center;
         font-weight: 500;
         cursor: pointer;
-        transition: all 1s ease-in;
+        transition: all 0.3s ease-out;
 
         &:active{
-           transform: scale(0.7);
+           transform: scale(0.95);
         }
     }
 
