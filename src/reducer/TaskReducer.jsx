@@ -45,8 +45,6 @@ const TaskReducer = (state, action) => {
         }
 
         case "EDIT": {
-            // const updatedTask = state.tasks.filter((task) => task.id !== action.payload.id);
-
             const editTaskValues = {
                 id: action.payload.id,
                 title: action.payload.title,
@@ -54,7 +52,6 @@ const TaskReducer = (state, action) => {
                 priority: action.payload.priority
             }
 
-            // return { ...state, tasks: updatedTask, edit:editTaskValues};
             return { ...state, edit: editTaskValues };
         }
 
@@ -80,14 +77,11 @@ const TaskReducer = (state, action) => {
 
 
             if (action.payload === "Pending") {
-                const filteredTask = state.tasks.filter((task) => task.taskStatus === action.payload
-                );
 
                 return { ...state, category:action.payload };
             };
 
             if (action.payload === "Completed") {
-                const filteredTask = state.tasks.filter((task) => task.taskStatus === action.payload)
                 return { ...state, category:action.payload };
             };
 
