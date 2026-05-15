@@ -22,3 +22,6 @@ A Task Manager application built using React, Context API and useReducer.
 - src/context
 - src/reducer
 - src/assets/screenshots
+
+## Live Deploymet Link
+[Click Here](https://taskmanagerminiapp.netlify.app/)
