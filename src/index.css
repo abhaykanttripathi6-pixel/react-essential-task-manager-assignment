@@ -7,7 +7,6 @@
 body {
   max-width: 100rem;
   margin: 0 auto;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   background: linear-gradient(135deg, #2d1b69, #6b2d6b, #c0392b);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

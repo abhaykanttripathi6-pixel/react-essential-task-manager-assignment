@@ -41,8 +41,13 @@ const TaskItem = ({ id, title, description, date, status, priority }) => {
           <span className='status'>{status}</span>
         </div>
 
+        <div className='priority-sec'>
+          <span>Task Priority:</span>
+          <span className='priority'>{priority}</span>
+        </div>
+
         <div className="taskStatus-input">
-          <input id='checkbox' type="checkbox" onChange={handleToggleStatus}/>
+          <input id='checkbox' type="checkbox" onChange={handleToggleStatus} />
           <label htmlFor='checkbox'>Mark as completed</label>
         </div>
       </div>
@@ -50,10 +55,6 @@ const TaskItem = ({ id, title, description, date, status, priority }) => {
       <div className='edit'>
         <span onClick={handleEdit}>Edit</span>
         <span onClick={handleDelete}>Delete</span>
-      </div>
-
-      <div className='priority'>
-        <span>{priority}</span>
       </div>
     </TaskItemWrapper>
   )
@@ -63,12 +64,11 @@ export default TaskItem;
 
 const TaskItemWrapper = styled.div`
 
-    padding: 1rem 6rem 1rem 2rem;
+    padding: 2rem;
     margin: 1rem 0;
     background-color: white;
     box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.18);
     border-radius: 0.5rem;
-    position: relative;
     cursor: default;
 
     .taskTitle-Description{
@@ -96,7 +96,7 @@ const TaskItemWrapper = styled.div`
 
     .taskCreationTime{
         width: fit-content;
-        padding: 1rem 3rem 0 0;
+        padding: 1rem 0;
         border-top: 1px solid gray;
         color: gray;
         font-weight: 600;
@@ -109,15 +109,20 @@ const TaskItemWrapper = styled.div`
       color: gray;
     }
  
-    .status{
+    .status, .priority{
+      display: inline-block;
       padding: 0.3rem 0.5rem ;
-      margin: 1rem 0.5rem;
+      margin: 0.2rem 0.5rem;
       background-color: #00a400;
       border-radius: 0.7rem;
       font-size: small;
       font-weight: 600;
       cursor: pointer;
       color: white;
+    }
+
+    .priority{
+        background: red;
     }
 
     .taskStatus-input{
@@ -131,6 +136,7 @@ const TaskItemWrapper = styled.div`
      height: 1rem;
      width: 1rem;
    }
+
     .edit span{
         display: inline-block;
         padding: 0.5rem 1rem ;
@@ -142,22 +148,9 @@ const TaskItemWrapper = styled.div`
         cursor: pointer;
     }
 
-    .priority span{
-        display: inline-block;
-        padding: 0.4rem 1.2rem;
-        background: red;
-        color: white;
-        font-weight: 600;
-        border-radius: 1rem;
-
-        position: absolute;
-        top: 2rem;
-        right: 1rem;
-    }
-
     @media (max-width:900px){
 
-    padding: 1rem 5rem 1rem 1rem;
+    padding: 1rem;
 
     .taskTitle-Description{
      word-wrap: break-word;
@@ -178,18 +171,14 @@ const TaskItemWrapper = styled.div`
         overflow-x: scroll;
     }
 
-
-    .edit span{
-        padding: 0.4rem 1rem ;
-        margin: 1rem 0.4rem 0.5rem 0;
-        font-size: small;
+    .edit{
+      display: flex;
+      justify-content: center;
     }
 
-    .priority span{
-
-        position: absolute;
-        top: 2rem;
-        right: 0.5rem;
+    .edit span{
+        padding: 0.5rem 2.5rem ;
+        font-size: small;
     }
 
     }

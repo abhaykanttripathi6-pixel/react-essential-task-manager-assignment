@@ -6,17 +6,17 @@ import TaskList from './TaskList';
 const TaskManager = () => {
     return (
         <AppWrapper>
-                <AppHeader>
-                    <div>
-                        <h1>Task Manager</h1>
-                        <p>Built with React Context API and useReducer</p>
-                    </div>
-                </AppHeader>
+            <AppHeader>
+                <div>
+                    <h1>Task Manager</h1>
+                    <p>Built with React Context API and useReducer</p>
+                </div>
+            </AppHeader>
 
-                <MainWrapper>
-                    <TaskInput />
-                    <TaskList />
-                </MainWrapper>
+            <MainWrapper>
+                <TaskInput />
+                <TaskList />
+            </MainWrapper>
         </AppWrapper>
     )
 }
@@ -30,7 +30,7 @@ const AppWrapper = styled.div`
     padding: 2rem 5rem;
 
     @media screen {
-        padding: 1rem 3rem;
+        padding: 2rem;
     }
 `
 
@@ -61,6 +61,10 @@ const AppHeader = styled.header`
 
 
     @media (max-width:900px){
+
+    div{
+        height: 5rem;
+    }
 
     div  h1{
         font-size: 2rem;
