@@ -53,8 +53,8 @@ const TaskItem = ({ id, title, description, date, status, priority }) => {
       </div>
 
       <div className='edit'>
-        <span onClick={handleEdit}>Edit</span>
-        <span onClick={handleDelete}>Delete</span>
+        <button onClick={handleEdit}>Edit</button>
+        <button onClick={handleDelete}>Delete</button>
       </div>
     </TaskItemWrapper>
   )
@@ -137,12 +137,19 @@ const TaskItemWrapper = styled.div`
      width: 1rem;
    }
 
-    .edit span{
-        display: inline-block;
-        padding: 0.5rem 1rem ;
-        margin: 1rem 0.5rem;
+    .edit{
+      width: fit-content;
+      display: flex;
+      gap:1rem;
+    }
+
+    .edit button{
+        flex:1;
+        padding: 0.5rem 1.5rem;
         background: rgba(0, 0, 0, 0.1);
+        border: none;
         border-radius: 0.7rem;
+        color: rgba(0, 0, 0, 0.6);
         font-size: medium;
         font-weight: 600;
         cursor: pointer;
@@ -172,13 +179,11 @@ const TaskItemWrapper = styled.div`
     }
 
     .edit{
-      display: flex;
-      justify-content: center;
+      width: 100%;
     }
 
-    .edit span{
-        padding: 0.5rem 2.5rem ;
-        font-size: small;
+    .edit button{
+        padding: 0.5rem;
     }
 
     }
